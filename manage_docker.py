@@ -43,7 +43,7 @@ def mod_menu():
 	print("3.Exit")
 def disconnect_form_network():
 	command = 'docker network ls'
-	res = os.popen(coomand).read()
+	res = os.popen(command).read()
 	print(res)
 	net_id = input("Enter the network id :  ")
 	cont_name = input("Enter the container to disconnect from network :  ")
@@ -52,7 +52,7 @@ def disconnect_form_network():
 	print(result)	
 def connect_to_network():
 	command = 'docker network ls'
-	res = os.popen(coomand).read()
+	res = os.popen(command).read()
 	print(res)
 	net_id = input("Enter the network id :  ")
 	cont_name = input("Enter the container to connect to network :  ")
@@ -82,6 +82,9 @@ while True:
 	elif ch == '6':
 		mod_container_network_details()
 	elif ch == '7':
+		break
+	else:
+		print("Invalid input")
 		break
 	else:
 		print("Invalid input, try again")
